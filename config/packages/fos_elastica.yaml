@@ -1,0 +1,14 @@
+# Read the documentation: https://github.com/FriendsOfSymfony/FOSElasticaBundle/blob/master/doc/setup.md
+fos_elastica:
+    clients:
+        default: { url: '%env(ELASTICSEARCH_URL)%' }
+    indexes:
+        blog:
+            properties:
+                title: ~
+                content: ~
+            persistence:
+                driver: orm # the driver can be orm, mongodb, phpcr, propel or custom
+                model: App\Entity\Blog # the model class to map to this type
+                provider: ~ # The provider settings (optional)
+                finder: ~ # The finder settings (optional)
